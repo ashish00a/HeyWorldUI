@@ -1,0 +1,234 @@
+:host {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji", "Segoe UI Symbol";
+    font-size: 14px;
+    color: #333;
+    box-sizing: border-box;
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 8px 0;
+  }
+
+  p {
+    margin: 0;
+  }
+
+  .spacer {
+    flex: 1;
+  }
+
+  .toolbar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 60px;
+    display: flex;
+    align-items: center;
+    background-color: black;
+    color: white;
+    font-weight: 600;
+  }
+
+  .toolbar img {
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo {
+    height: 40px;
+    margin: 0 16px;
+  }
+
+  .toolbar #twitter-logo:hover {
+    opacity: 0.8;
+  }
+
+  /* Responsive Styles */
+  @media screen and (max-width: 767px) {
+
+    .card-container > *:not(.circle-link) ,
+    .terminal {
+      width: 100%;
+    }
+
+    .card:not(.highlight-card) {
+      height: 16px;
+      margin: 8px 0;
+    }
+
+    .card.highlight-card span {
+      margin-left: 72px;
+    }
+
+    svg#rocket-smoke {
+      right: 120px;
+      transform: rotate(-5deg);
+    }
+  }
+
+  @media screen and (max-width: 575px) {
+    svg#rocket-smoke {
+      display: none;
+      visibility: hidden;
+    }
+  }
+
+
+  a
+ {
+   text-decoration: none;
+   color: #c9c5c5;
+   
+   transition: color 0.3s ease;
+ }
+
+ #menuToggle
+ {
+   display: block;
+   position: absolute;
+   top: 20px;
+   right: 50px;
+   
+   z-index: 1;
+   
+   -webkit-user-select: none;
+   user-select: none;
+ }
+ 
+ #menuToggle input
+ {
+   display: block;
+   width: 40px;
+   height: 32px;
+   position: absolute;
+   top: -7px;
+   left: -5px;
+   
+   cursor: pointer;
+   
+   opacity: 0; /* hide this */
+   z-index: 2; 
+   
+   -webkit-touch-callout: none;
+ }
+ 
+ #menuToggle span
+ {
+   display: block;
+   width: 33px;
+   height: 4px;
+   margin-bottom: 5px;
+   position: relative;
+   
+   background: #cdcdcd;
+   border-radius: 3px;
+   
+   z-index: 1;
+   
+   transform-origin: 4px 0px;
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               background 0.5s cubic-bezier(0.77,0.2,0.05,1.0),
+               opacity 0.55s ease;
+ }
+ 
+ #menuToggle span:first-child
+ {
+   transform-origin: 0% 0%;
+ }
+ 
+ #menuToggle span:nth-last-child(2)
+ {
+   transform-origin: 0% 100%;
+   
+ }
+ 
+ /* 
+  * Transform all the slices of hamburger
+  * into a crossmark.
+  */
+ #menuToggle input:checked ~ span
+ {
+   opacity: 1;
+   transform: rotate(45deg) translate(-2px, -1px);
+   background: #cdcdcd;
+ }
+ 
+ /*
+  * But let's hide the middle one.
+  */
+ #menuToggle input:checked ~ span:nth-last-child(3)
+ {
+   opacity: 0;
+   transform: rotate(0deg) scale(0.2, 0.2);
+ }
+ 
+ 
+ #menuToggle input:checked ~ span:nth-last-child(2)
+ {
+   opacity: 1;
+   transform: rotate(-45deg) translate(0, -1px);
+ }
+ 
+
+ #menu
+ {
+   position: absolute;
+   width: 230px;
+   margin-top: -100px;
+   margin-right: 230px;
+   padding: 50px 0px 0px 0px;
+   padding-top: 125px;
+   right: -80px;
+   visibility: collapse;
+   background: #000000;
+   list-style-type: none;
+   -webkit-font-smoothing: antialiased;
+   /* to stop flickering of text in safari */
+   
+   transform-origin: 0% 0%;
+   transform: translate(100%, 0);
+   
+   transition: transform 0.5s cubic-bezier(0.77,0.2,0.05,1.0);
+ }
+ 
+ #menu li
+ {
+   padding: 21px;
+   font-size: 22px;
+   display: block;
+   color: white;
+   
+ }
+
+ #menu a {
+   display: block;
+   border-top: 0.01px solid #ffffff;
+   border-top-width: thin;
+   margin: 0px;
+ }
+ .menu_item:hover
+ {
+   background: rgb(242, 200, 15)
+ 
+ }
+
+ 
+ /*
+  * And let's fade it in from the left
+  */
+ #menuToggle input:checked ~ ul
+ {
+   transform: scale(1.0, 1.0);
+   opacity: 1;
+   visibility: visible;
+   position: absolute;
+   right: -280px;
+ }
